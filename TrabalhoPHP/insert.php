@@ -11,20 +11,20 @@
     <?php
         require('conexao.php');
 
-        $Descrição    = $_POST['Descrição'];
-        $Marca   = $_POST['Marca'];
-        $Estoque = $_POST['Estoque'];
-        $Preço   = $_POST['Preço'];
+        $descricao = $_POST['Descrição'];
+        $marca   = $_POST['Marca'];
+        $estoque = $_POST['Estoque'];
+        $preco   = $_POST['Preço'];
 
         $erros = 0;
     ?>
 
-    <?php if (is_null($Descrição) OR $Descrição == ''): ?>
+    <?php if (is_null($descricao) OR $descricao == ''): ?>
         <div class="alert alert-danger" role="alert">Descrição não pode estar em branco.</div>
         <?php $erros++ ?>
     <?php endif; ?>
 
-    <?php if (is_null($Marca) OR $Marca == ''): ?>
+    <?php if (is_null($marca) OR $marca == ''): ?>
         <div class="alert alert-danger" role="alert">A marca não pode estar em branco.</div>
         <?php $erros++ ?>
     <?php endif; ?>
@@ -33,8 +33,8 @@
         $resultado = false;
 
         if ($erros == 0) {
-            $sql = "INSERT INTO produtos (id, Descrição, Marca, Estoque, Preço) 
-                VALUES (null , '$Descrição', '$Marca', '$Estoque', '$Preço')";
+            $sql = "INSERT INTO produtos (ID, descricao, marca, estoque, preco) 
+                VALUES (null , '$descricao', '$marca', '$estoque', '$preco')";
         
             $resultado = mysqli_query($conexao, $sql);
         }        
@@ -45,7 +45,7 @@
         <a href="select.php" class="btn btn-primary">Lista de Produtos</a>
     <?php else: ?>
         <div class="alert alert-danger" role="alert">Erro!</div>
-        <a href="cadastrar.php" class="btn btn-primary">Tentar novamente</a>
+        <a href="cadastro.php" class="btn btn-primary">Tentar novamente</a>
     <?php endif; ?>
     
 </body>
