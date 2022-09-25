@@ -11,21 +11,21 @@
     <?php
         require('conexao.php');
 
-        $nome    = $_POST['nome'];
-        $email   = $_POST['email'];
-        $usuario = $_POST['usuario'];
-        $senha   = $_POST['senha'];
+        $Descrição    = $_POST['Descrição'];
+        $Marca   = $_POST['Marca'];
+        $Estoque = $_POST['Estoque'];
+        $Preço   = $_POST['Preço'];
 
         $erros = 0;
     ?>
 
-    <?php if (is_null($nome) OR $nome == ''): ?>
-        <div class="alert alert-danger" role="alert">Nome não pode estar em branco.</div>
+    <?php if (is_null($Descrição) OR $Descrição == ''): ?>
+        <div class="alert alert-danger" role="alert">Descrição não pode estar em branco.</div>
         <?php $erros++ ?>
     <?php endif; ?>
 
-    <?php if (!filter_var($email, FILTER_VALIDATE_EMAIL)): ?>
-        <div class="alert alert-danger" role="alert">E-mail inválido.</div>
+    <?php if (is_null($Marca) OR $Marca == ''): ?>
+        <div class="alert alert-danger" role="alert">A marca não pode estar em branco.</div>
         <?php $erros++ ?>
     <?php endif; ?>
         
@@ -33,20 +33,10 @@
         $resultado = false;
 
         if ($erros == 0) {
-            $sql = "INSERT INTO usuarios (id, nome, email, user, senha) 
-                VALUES (null , '$nome', '$email', '$usuario', '$senha')";
+            $sql = "INSERT INTO produtos (id, Descrição, Marca, Estoque, Preço) 
+                VALUES (null , '$Descrição', '$Marca', '$Estoque', '$Preço')";
         
             $resultado = mysqli_query($conexao, $sql);
         }        
     ?>
-
-    <?php if ($resultado): ?>
-        <div class="alert alert-success" role="alert">Usuário cadastrado.</div>
-        <a href="select.php" class="btn btn-primary">Lista de Usuário</a>
-    <?php else: ?>
-        <div class="alert alert-danger" role="alert">Erro!</div>
-        <a href="cadastrar.php" class="btn btn-primary">Tentar novamente</a>
-    <?php endif; ?>
-    
-    </body>
 </html>
