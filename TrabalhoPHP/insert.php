@@ -39,4 +39,14 @@
             $resultado = mysqli_query($conexao, $sql);
         }        
     ?>
+
+    <?php if ($resultado): ?>
+        <div class="alert alert-success" role="alert">Descrição cadastrada.</div>
+        <a href="select.php" class="btn btn-primary">Lista de Produtos</a>
+    <?php else: ?>
+        <div class="alert alert-danger" role="alert">Erro!</div>
+        <a href="cadastrar.php" class="btn btn-primary">Tentar novamente</a>
+    <?php endif; ?>
+    
+</body>
 </html>
