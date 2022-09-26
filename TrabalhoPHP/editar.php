@@ -3,7 +3,7 @@
 
     require('conexao.php');
     $resultado = mysqli_query($conexao, "SELECT * FROM produtos WHERE id = $id");
-    $usuario = mysqli_fetch_assoc($resultado);
+    $produtos = mysqli_fetch_assoc($resultado);
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,7 +24,7 @@
           </div>
           <div class="mb-3">
             <label for="Marca" class="form-label">Marca:</label>
-            <input type="email" class="form-control" id="Marca" name="Marca" value="<?=$produto['Marca']?>">
+            <input type="text" class="form-control" id="Marca" name="Marca" value="<?=$produto['Marca']?>">
           </div>
           <div class="mb-3">
             <label for="Estoque" class="form-label">Estoque:</label>
