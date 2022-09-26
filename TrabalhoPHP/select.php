@@ -14,6 +14,7 @@
               <td>ID</td>
               <td>Descrição</td>
               <td>Marca</td>
+              <td>Estoque</td>
               <td>Preço</td>
               <td>Opções</td>
           </tr>
@@ -27,6 +28,7 @@
             <td><?=$registro['id']?></td>
             <td><?=$registro['descricao']?></td>
             <td><?=$registro['marca']?></td>
+            <td><?=$registro['estoque']?></td>
             <td><?=$registro['preco']?></td>           
             <td><a href="editar.php?id=<?=$registro['id']?>" class="btn btn-warning">Editar</a></td>
             <td><a href="delete.php?id=<?=$registro['id']?>" class="btn btn-danger">Excluir</a></td>

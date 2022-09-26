@@ -28,10 +28,10 @@
           </div>
           <div class="mb-3">
             <label for="Estoque" class="form-label">Estoque:</label>
-            <input type="text" class="form-control" id="usuario" name="Estoque" value="<?=$produto['Estoque']?>">
+            <input type="text" class="form-control" id="estoque" name="Estoque" value="<?=$produto['Estoque']?>">
           </div>
           <div class="mb-3">
-            <label for="Preco" class="form-label">Preco:</label>
+            <label for="Preco" class="form-label">Preço:</label>
             <input type="text" class="form-control" id="Preco" name="Preco">
           </div>
           <div class="mb-3 ">
