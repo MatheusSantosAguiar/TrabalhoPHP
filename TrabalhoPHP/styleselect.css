@@ -27,17 +27,17 @@ h1{
     
     
     tr:nth-child(even) {
-    background-color: #DCEBE6;
+    background-color: #0f1f49;
     }
     
     tr:hover:nth-child(1n + 2) {
-    background-color: #085F63;
+    background-color: #194042;
     color: #fff;
     }
     
     form [type="submit"]{
         display: block;
-        background-color: #5568fe;
+        background-color: #1a1f41;
         font-size: 20px;
         text-transform: uppercase;
         font-weight: bold;
